@@ -1,8 +1,8 @@
 {
-  "name": "chat-server",
+  "name": "grpc-chat",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "gb21oc",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
