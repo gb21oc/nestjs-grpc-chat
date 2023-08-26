@@ -5,14 +5,14 @@ import { Observable } from "rxjs";
 
 export interface ChatServiceDomain extends Omit<ChatControllerDomain, "createUser" | "sendMessageToUser">{
     /**
-     * Responsavel pela validação e inserção do usuario
+     * Responsible for user validation and insertion
      * @param payload 
      * @param call 
      */
     createUser(payload: IChat.CreateUser, call: ServerUnaryCall<IChat.CreateUser, IChat.ResponseCreateUser>): IChat.ResponseCreateUser
 
     /**
-     * Responsavel por realizar a validação da regra de negocio e realizar o streaming das mensagens
+     * Responsible for validating business rules and streaming messages
      * @param payload 
      */
     joinChat(payload: Observable<IChat.SendToUser>): Observable<IChat.ReceiveMsg>
