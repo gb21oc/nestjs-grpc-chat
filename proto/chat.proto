@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package chat;
+
+service Chat{
+    rpc CreateUser(User) returns (ResponseUser);
+    rpc GetAllUsers(Empty) returns (ResponseGetAllUsers);
+    rpc SendMessageToUser(stream ToUser) returns (stream ResponseSendMessage);
+}
+
+message User{
+    required string user = 2;
+}
+
+message UserCreated{
+    int32 id = 1;
+    string user = 2;
+}
+
+message ToUser{
+    required string from = 1;
+    required int32 toID = 2;
+    required string msg = 3;
+}
+
+// Response
+message ResponseUser{
+    string error = 1;
+    bool userCreated = 2;
+}
+
+message ResponseGetAllUsers{
+    repeated UserCreated users = 1;
+}
+
+message ResponseSendMessage{
+    string from = 1;
+    string msg = 2;
+}
+
+
+// Tricks 
+message Empty{}
