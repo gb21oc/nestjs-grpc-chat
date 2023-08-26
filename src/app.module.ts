@@ -1,6 +1,9 @@
 import { Module } from '@nestjs/common';
+import { RouteModule } from './routes/routes.module';
 
 @Module({
-  imports: [],
+  imports: [
+    RouteModule
+  ],
 })
 export class AppModule {}
