@@ -13,6 +13,14 @@ export namespace IChat{
     export type OmitContextConnectionInGetUser = Omit<User, "contextConnection">
 
     /**
+     * Stores messages that have not been sent because the user is not logged in yet
+     */
+    export interface AttempsMsg{
+        toUser: IChat.User
+        messagePayload: IChat.ReceiveMsg
+    }
+
+    /**
      * User created, enter your name
      */
     export type CreateUser = {
