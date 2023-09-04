@@ -17,10 +17,32 @@
       "user": "gb"
     }
     ```
+    - **Response**:
+    ```json
+    {
+      "error": "",
+      "userCreated": true
+    }
+    ```
   - **GetAllUsers**
     - **Interface**: N/A
     - **Stream**: No
     - **Body**: No
+    - **Response**:
+    ```json
+    {
+      "users": [
+          {
+              "id": 1,
+              "user": "gb"
+          },
+          {
+              "id": 2,
+              "user": "gbOutroUsuario"
+          }
+      ]
+    }
+    ```
   - **SendMessageToUser**
     - **Interface**: IChat.SendToUser
     - **Stream**: yes
