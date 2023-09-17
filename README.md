@@ -19,6 +19,13 @@
       "user": "gb"
     }
     ```
+    - **Response**:
+    ```json
+    {
+      "error": "",
+      "userCreated": true
+    }
+    ```
   - **GetAllUsers**
     - **Interface**: N/A
     - **Stream**: No
