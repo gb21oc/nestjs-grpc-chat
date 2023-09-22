@@ -1,5 +1,26 @@
 ![Alt text](images/image.png)
 
+```mermaid
+classDiagram
+    ChatController <.. ChatService: Dependency
+    ChatController <|-- ChatControllerDomain: Inheritance
+
+    class ChatController{
+        +ChatService _chatService
+        constructor(_chatService: ChatService)
+        +createUser(data: IChat.CreateUser, _metadata: Metadata, call: ServerUnaryCall<IChat.CreateUser, IChat.ResponseCreateUser>, ):IChat.ResponseCreateUser
+        +getAllUsers():IChat.ResponseGetAll
+        +sendMessageToUser(data: Observable<IChat.SendToUser>)
+    }
+    class ChatService{
+        +IChat.User[] users
+        +IChat.AttempsMsg[] attempsMsg
+        +createUser(payload: IChat.CreateUser, call: ServerUnaryCall<IChat.CreateUser, IChat.ResponseCreateUser>, )
+        +getAllUsers():IChat.ResponseGetAll
+        +joinChat(payload: Observable<IChat.SendToUser>):Observable<IChat.ReceiveMsg>
+    }
+```
+
 # Configuration
 - **Port**: 50051
 - **Proto files**:
