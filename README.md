@@ -2,6 +2,7 @@
 
 ```mermaid
 classDiagram
+    ChatService <|-- ChatServiceDomain: Inheritance
     ChatController <.. ChatService: Dependency
     ChatController <|-- ChatControllerDomain: Inheritance
 
